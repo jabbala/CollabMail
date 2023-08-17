@@ -114,6 +114,14 @@ A simplified database design for the "CollabMail" project, focusing on the core 
 - RequestTimestamp
 - Status (Pending/Approved/Rejected)
 
+### Report:
+
+- ReportID (Primary Key)
+- UserID (Foreign Key referencing User.UserID)
+- ReportType (Workflow/Access/Custom/etc.)
+- ReportData (JSON or Text)
+- ReportTimestamp
+
 ## Relationships:
 
 - Each User can create multiple MailGroups.
@@ -131,3 +139,4 @@ A simplified database design for the "CollabMail" project, focusing on the core 
 - Each AccessRequest is associated with one User, one MailGroup, and one Role.
 - Each RecertificationTask is associated with one User and one MailGroup.
 - Each RevocationRequest is associated with one User and one MailGroup.
+- Each Report is associated with one User and contains report data.
