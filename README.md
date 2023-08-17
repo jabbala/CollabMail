@@ -12,15 +12,27 @@ CollabMail is an enterprise-grade web application designed to streamline team co
 - Mail Group Creation and Management: Create, join, and manage mail groups for different project teams.
 - Email Categorization: Categorize emails as business or technical notifications for better organization.
 - Workflow and Approval Process: Integrate workflow templates for specific actions such as document approval, task assignments, and decision-making.
+- Mail Notification Engine: Automate real-time mail notifications for key events, enhancing team awareness and responsiveness.
 - User-Centric Interface: Deliver a user-friendly frontend interface for easy navigation and interaction.
 
-# Workflow and Approval Process
-- CollabMail introduces a powerful workflow and approval process module that enhances team collaboration and decision-making. Here's how it works:
+## Workflow and Approval Process
+CollabMail introduces a powerful workflow and approval process module that enhances team collaboration and decision-making. Here's how it works:
 - Workflow Templates: Admins can define custom workflow templates that outline a sequence of steps, roles, and actions. For instance, a "Document Approval" template might involve stages like "Draft Review," "Manager Approval," and "Final Review."
 - Initiating Workflows: Users can initiate workflows within mail groups. For instance, a user can initiate the "Document Approval" workflow by uploading a document and selecting the appropriate workflow template.
 - Role-Based Actions: Each workflow stage involves role-based actions. Users with the required role can perform actions such as reviewing, approving, or rejecting.
-- Notifications and Reminders: Users receive notifications and reminders about pending workflow tasks, ensuring timely actions.
-- History and Tracking: The system maintains a history of workflow actions, providing transparency and accountability.
+- Real-time Notifications: The mail notification engine generates real-time email notifications for workflow tasks, ensuring immediate awareness and action.
+- Transparent Tracking: Detailed history and tracking of workflow actions enhance transparency and accountability.
+
+## Mail Notification Engine
+The Mail Notification Engine enhances CollabMail Pro by providing automatic email notifications for various events:
+
+- New mail group invitations
+- Workflow initiation and task assignments
+- Workflow stage transitions
+- Workflow approval or rejection
+- Important email arrivals
+
+Notifications are sent to relevant users, ensuring that team members are informed and engaged throughout the collaboration process.
 
 ## Technologies Used
 
