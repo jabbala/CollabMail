@@ -10,6 +10,18 @@ Email
 Password (Hashed and Salted)
 Registration Date
 
+### Role:
+
+RoleID (Primary Key)
+RoleName
+Description
+
+### Entitlement:
+
+EntitlementID (Primary Key)
+EntitlementName
+Description
+
 ### MailGroup:
 
 GroupID (Primary Key)
