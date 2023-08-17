@@ -12,6 +12,7 @@ CollabMail is an enterprise-grade web application designed to streamline team co
 - Mail Group Creation and Management: Create, join, and manage mail groups for different project teams.
 - Email Categorization: Categorize emails as business or technical notifications for better organization.
 - Workflow and Approval Process: Integrate workflow templates for specific actions such as document approval, task assignments, and decision-making.
+- Business Intelligence Integration: Integrate reporting tools for data analysis and visualization.
 - Mail Notification Engine: Automate real-time mail notifications for key events, enhancing team awareness and responsiveness.
 - User-Centric Interface: Deliver a user-friendly frontend interface for easy navigation and interaction.
 
@@ -33,6 +34,15 @@ CollabMail Pro integrates with downstream systems for access provisioning, recer
 CollabMail Pro leverages both real-time and batch processing for access management:
 - Real-Time Processing: Instantly trigger access actions and notifications for critical events such as new access requests or revocation.
 - Batch Processing: Perform bulk access provisioning, recertification, or revocation actions on a scheduled basis to optimize system performance.
+
+## Reporting and Business Intelligence Integration
+CollabMail seamlessly integrates with reporting tools for advanced business intelligence capabilities:
+
+- Data Extraction: Extract relevant data from CollabMail Pro's database for analysis.
+- Data Transformation: Transform raw data into meaningful insights through aggregation, filtering, and calculations.
+- Data Visualization: Generate interactive reports, charts, and dashboards to visualize trends and patterns.
+- Customizable Reports: Create custom reports based on user requirements and business objectives.
+- Scheduled Reporting: Schedule and automate the delivery of reports to key stakeholders.
 
 ## Mail Notification Engine
 The Mail Notification Engine enhances CollabMail Pro by providing automatic email notifications for various events:
@@ -87,6 +97,7 @@ Detailed API documentation is available [here](/path/to/api-documentation.md).
 4. Initiate and participate in workflow and approval processes.
 5. Customize notification preferences and access control settings.
 6. Stay informed with real-time mail notifications for access management tasks.
+7. Access insightful reports and visualizations through the integrated reporting tools.
 
 ## Contributing
 
