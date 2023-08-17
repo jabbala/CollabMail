@@ -299,6 +299,71 @@ Authorization: Bearer YOUR_AUTH_TOKEN
 }
 ```
 
+## Report Endpoints
+### Retrieve Data for Reporting
+- URL: /api/reports/data
+- Method: GET
+- Response:
+``` json
+{
+  "success": true,
+  "data": [
+    {
+      "date": "2023-08-01",
+      "emailsSent": 120,
+      "emailsReceived": 85,
+      "workflowsInitiated": 15,
+      "workflowsCompleted": 10
+    },
+    {
+      "date": "2023-08-02",
+      "emailsSent": 110,
+      "emailsReceived": 90,
+      "workflowsInitiated": 20,
+      "workflowsCompleted": 18
+    },
+    // ...
+  ]
+}
+```
+### Generate Custom Reports
+- URL: /api/reports/generate
+- Method: POST
+- Request Body:
+``` json
+{
+  "reportType": "workflow",
+  "startDate": "2023-07-01",
+  "endDate": "2023-07-31",
+  "groupBy": "user"
+}
+```
+- Response:
+``` json
+{
+  "success": true,
+  "report": {
+    "reportType": "workflow",
+    "startDate": "2023-07-01",
+    "endDate": "2023-07-31",
+    "groupBy": "user",
+    "data": [
+      {
+        "user": "john_doe",
+        "workflowsInitiated": 30,
+        "workflowsCompleted": 25
+      },
+      {
+        "user": "jane_smith",
+        "workflowsInitiated": 40,
+        "workflowsCompleted": 35
+      },
+      // ...
+    ]
+  }
+}
+```
+
 ## Notification Endpoints
 ### Get User Notifications
 * URL: /api/notifications
