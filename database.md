@@ -47,19 +47,49 @@ A simplified database design for the "CollabMail" project, focusing on the core 
 6. Timestamp
 7. Category (Business/Technical)
 
+### WorkflowTemplate:
+
+- TemplateID (Primary Key)
+- TemplateName
+- Description
+
+### WorkflowStage:
+
+- StageID (Primary Key)
+- TemplateID (Foreign Key referencing WorkflowTemplate.TemplateID)
+- StageName
+- RoleID (Foreign Key referencing Role.RoleID)
+- Actions (JSON Array of role-based actions)
+
+### WorkflowInstance:
+
+- InstanceID (Primary Key)
+- TemplateID (Foreign Key referencing WorkflowTemplate.TemplateID)
+- InitiatorUserID (Foreign Key referencing User.UserID)
+- StartTimestamp
+- Status (Pending/Approved/Rejected)
+- CurrentStageID (Foreign Key referencing WorkflowStage.StageID)
+
+### WorkflowAction:
+
+- ActionID (Primary Key)
+- InstanceID (Foreign Key referencing WorkflowInstance.InstanceID)
+- UserID (Foreign Key referencing User.UserID)
+- StageID (Foreign Key referencing WorkflowStage.StageID)
+- ActionTimestamp
+- Comment
+- Status (Pending/Approved/Rejected)
+
 ## Relationships:
 
-* Each User can create multiple MailGroups.
-* Each User can be a member of multiple MailGroups.
-* Each MailGroup is created by one User (CreatedBy).
-* Each Email belongs to one MailGroup and is sent by one User.
-* Each Membership associates one User with one MailGroup.
-
-### Role-Entitlement Relationship:
-
-* Each Role can have multiple Entitlements.
-* Each User can be assigned one or more Roles.
-
-### User-Role Relationship:
-
-* Each User can have one or more Roles.
+- Each User can create multiple MailGroups.
+- Each User can be a member of multiple MailGroups.
+- Each MailGroup is created by one User (CreatedBy).
+- Each Email belongs to one MailGroup and is sent by one User.
+- Each Membership associates one User with one MailGroup.
+- Each Role can have multiple Entitlements.
+- Each User can have one or more Roles.
+- Each WorkflowTemplate can have multiple WorkflowStages.
+- Each WorkflowInstance belongs to one WorkflowTemplate and is initiated by one User.
+- Each WorkflowStage is associated with one Role.
+- Each WorkflowAction is associated with one WorkflowInstance, one User, and one WorkflowStage.
