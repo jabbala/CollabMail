@@ -88,6 +88,32 @@ A simplified database design for the "CollabMail" project, focusing on the core 
 - Type (NewEmail/NewWorkflow/TaskAssigned/ApprovalRequired/etc.)
 - Timestamp
 
+### AccessRequest:
+
+- RequestID (Primary Key)
+- UserID (Foreign Key referencing User.UserID)
+- GroupID (Foreign Key referencing MailGroup.GroupID)
+- RequestTimestamp
+- Status (Pending/Approved/Rejected)
+- RoleID (Foreign Key referencing Role.RoleID)
+
+### RecertificationTask:
+
+- TaskID (Primary Key)
+- UserID (Foreign Key referencing User.UserID)
+- GroupID (Foreign Key referencing MailGroup.GroupID)
+- DueDate
+- Status (Pending/Completed)
+- LastRecertificationDate
+
+### RevocationRequest:
+
+- RequestID (Primary Key)
+- UserID (Foreign Key referencing User.UserID)
+- GroupID (Foreign Key referencing MailGroup.GroupID)
+- RequestTimestamp
+- Status (Pending/Approved/Rejected)
+
 ## Relationships:
 
 - Each User can create multiple MailGroups.
@@ -102,3 +128,6 @@ A simplified database design for the "CollabMail" project, focusing on the core 
 - Each WorkflowStage is associated with one Role.
 - Each WorkflowAction is associated with one WorkflowInstance, one User, and one WorkflowStage.
 - Each Notification is associated with one User and may reference an Email.
+- Each AccessRequest is associated with one User, one MailGroup, and one Role.
+- Each RecertificationTask is associated with one User and one MailGroup.
+- Each RevocationRequest is associated with one User and one MailGroup.
