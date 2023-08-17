@@ -164,3 +164,107 @@ Authorization: Bearer YOUR_AUTH_TOKEN
   ]
 }
 ```
+
+## Workflow Endpoints
+### Create Workflow Instance
+* URL: /api/workflows
+* Method: POST
+* Request Body:
+``` json
+{
+  "templateID": 1
+}
+```
+* Response:
+``` json
+{
+  "success": true,
+  "message": "Workflow instance created successfully",
+  "instanceID": 123
+} 
+```
+### Get Workflow Instance Details
+* URL: /api/workflows/:instanceID
+* Method: GET
+* Response:
+
+``` json
+{
+  "success": true,
+  "instanceID": 123,
+  "templateID": 1,
+  "initiator": "john_doe",
+  "startTimestamp": "2023-08-20T09:00:00Z",
+  "status": "Pending",
+  "currentStage": {
+    "stageID": 2,
+    "stageName": "Review",
+    "role": "Manager",
+    "actions": ["Approve", "Reject"]
+  },
+  "actions": [
+    {
+      "actionID": 1,
+      "userID": "manager1",
+      "stage": "Review",
+      "timestamp": "2023-08-20T09:30:00Z",
+      "status": "Pending"
+    }
+  ]
+}
+```
+
+### Perform Workflow Action
+* URL: /api/workflows/:instanceID/actions
+* Method: POST
+* Request Body:
+``` json
+{
+  "action": "Approve",
+  "comment": "Looks good"
+}
+```
+
+* Response:
+``` json
+{
+  "success": true,
+  "message": "Action performed successfully"
+}
+```
+
+## Notification Endpoints
+### Get User Notifications
+* URL: /api/notifications
+* Method: GET
+* Response:
+
+``` json
+{
+  "success": true,
+  "notifications": [
+    {
+      "notificationID": 1,
+      "type": "NewEmail",
+      "timestamp": "2023-08-22T15:00:00Z",
+      "data": {
+        "emailID": 123,
+        "sender": "user1",
+        "subject": "New Task Assignment",
+        "body": "You have been assigned a new task."
+      }
+    },
+    {
+      "notificationID": 2,
+      "type": "ApprovalRequired",
+      "timestamp": "2023-08-22T16:00:00Z",
+      "data": {
+        "instanceID": 456,
+        "stageName": "Review",
+        "initiator": "user2",
+        "comment": "Please review the document."
+      }
+    }
+  ]
+}
+```
