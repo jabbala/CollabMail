@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-express-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs-express-backend
+  template:
+    metadata:
+      labels:
+        app: nodejs-express-backend
+    spec:
+      containers:
+        - name: nodejs-express-backend
+          image: your-image-repo/spring-boot-backend:latest
+          ports:
+            - containerPort: 8080

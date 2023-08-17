@@ -1,0 +1,48 @@
+version: "3"
+services:
+  spring-boot-backend:
+    build:
+      context: ./backend/spring-boot
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+
+  nodejs-express-backend:
+    build:
+      context: ./backend/nodejs-express
+    ports:
+      - "3000:3000"
+    depends_on:
+      - database
+
+  python-flask-backend:
+    build:
+      context: ./backend/python-flask
+    ports:
+      - "5000:5000"
+    depends_on:
+      - database
+
+  python-django-backend:
+    build:
+      context: ./backend/python-django
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "80:80"
+
+  database:
+    image: postgres:12
+    environment:
+      POSTGRES_DB: collabmailpro
+      POSTGRES_USER: collabmailuser
+      POSTGRES_PASSWORD: collabmailpassword
+    ports:
+      - "5432:5432"
