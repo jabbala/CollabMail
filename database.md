@@ -4,68 +4,62 @@ A simplified database design for the "CollabMail" project, focusing on the core 
 ## Entities
 ### User:
 
-UserID (Primary Key)
-Username
-Email
-Password (Hashed and Salted)
-Registration Date
+1. UserID (Primary Key)
+2. Username
+3. Email
+4. Password (Hashed and Salted)
+5. Registration Date
 
 ### Role:
 
-RoleID (Primary Key)
-RoleName
-Description
+1. RoleID (Primary Key)
+2. RoleName
+3. Description
 
 ### Entitlement:
 
-EntitlementID (Primary Key)
-EntitlementName
-Description
+1. EntitlementID (Primary Key)
+2. EntitlementName
+3. Description
 
 ### MailGroup:
 
-GroupID (Primary Key)
-GroupName
-Description
-CreatedBy (Foreign Key referencing User.UserID)
-Creation Date
+1. GroupID (Primary Key)
+2. GroupName
+3. Description
+4. CreatedBy (Foreign Key referencing User.UserID)
+5. Creation Date
 
 ### Membership:
 
-MembershipID (Primary Key)
-GroupID (Foreign Key referencing MailGroup.GroupID)
-UserID (Foreign Key referencing User.UserID)
-Join Date
+1. MembershipID (Primary Key)
+2. GroupID (Foreign Key referencing MailGroup.GroupID)
+3. UserID (Foreign Key referencing User.UserID)
+4. Join Date
 
 ### Email:
 
-EmailID (Primary Key)
-GroupID (Foreign Key referencing MailGroup.GroupID)
-SenderUserID (Foreign Key referencing User.UserID)
-Subject
-Body
-Timestamp
-Category (Business/Technical)
+1. EmailID (Primary Key)
+2. GroupID (Foreign Key referencing MailGroup.GroupID)
+3. SenderUserID (Foreign Key referencing User.UserID)
+4. Subject
+5. Body
+6. Timestamp
+7. Category (Business/Technical)
 
 ## Relationships:
 
-Each User can create multiple MailGroups.
-Each User can be a member of multiple MailGroups.
-Each MailGroup is created by one User (CreatedBy).
-Each Email belongs to one MailGroup and is sent by one User.
-Each Membership associates one User with one MailGroup.
+* Each User can create multiple MailGroups.
+* Each User can be a member of multiple MailGroups.
+* Each MailGroup is created by one User (CreatedBy).
+* Each Email belongs to one MailGroup and is sent by one User.
+* Each Membership associates one User with one MailGroup.
 
 ### Role-Entitlement Relationship:
 
-Each Role can have multiple Entitlements.
-Each User can be assigned one or more Roles.
+* Each Role can have multiple Entitlements.
+* Each User can be assigned one or more Roles.
 
 ### User-Role Relationship:
 
-Each User can have one or more Roles.
-
-## Database Design Considerations: (Personal Note)
-
-Use appropriate data types for each attribute (e.g., VARCHAR for strings, DATETIME for timestamps).
-Set up foreign key constraints to maintain data integrity.
-Implement proper indexing for efficient querying, especially for frequently accessed attributes.
+* Each User can have one or more Roles.
