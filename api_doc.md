@@ -233,6 +233,72 @@ Authorization: Bearer YOUR_AUTH_TOKEN
 }
 ```
 
+## Access Management Endpoints
+### Request Access
+- URL: /api/access/request
+- Method: POST
+- Request Body:
+``` json
+{
+  "groupID": 123,
+  "roleID": 1
+}
+```
+- Response:
+``` json
+{
+  "success": true,
+  "message": "Access request submitted successfully",
+  "requestID": 456
+}
+```
+
+### Recertification Tasks
+- URL: /api/access/recertification
+- Method: GET
+- Response:
+``` json
+{
+  "success": true,
+  "tasks": [
+    {
+      "taskID": 1,
+      "groupID": 123,
+      "dueDate": "2023-09-30T23:59:59Z",
+      "status": "Pending"
+    }
+  ]
+}
+```
+
+### Complete Recertification
+- URL: /api/access/recertification/:taskID
+- Method: POST
+- Response:
+``` json
+{
+  "success": true,
+  "message": "Recertification completed successfully"
+}
+```
+### Request Revocation
+- URL: /api/access/revocation
+- Method: POST
+- Request Body:
+``` json
+{
+  "groupID": 123
+}
+```
+- Response:
+``` json
+{
+  "success": true,
+  "message": "Revocation request submitted successfully",
+  "requestID": 789
+}
+```
+
 ## Notification Endpoints
 ### Get User Notifications
 * URL: /api/notifications
