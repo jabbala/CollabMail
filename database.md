@@ -55,6 +55,15 @@ Each MailGroup is created by one User (CreatedBy).
 Each Email belongs to one MailGroup and is sent by one User.
 Each Membership associates one User with one MailGroup.
 
+### Role-Entitlement Relationship:
+
+Each Role can have multiple Entitlements.
+Each User can be assigned one or more Roles.
+
+### User-Role Relationship:
+
+Each User can have one or more Roles.
+
 ## Database Design Considerations: (Personal Note)
 
 Use appropriate data types for each attribute (e.g., VARCHAR for strings, DATETIME for timestamps).
