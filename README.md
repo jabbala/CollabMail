@@ -23,6 +23,17 @@ CollabMail introduces a powerful workflow and approval process module that enhan
 - Real-time Notifications: The mail notification engine generates real-time email notifications for workflow tasks, ensuring immediate awareness and action.
 - Transparent Tracking: Detailed history and tracking of workflow actions enhance transparency and accountability.
 
+## Access Management Integration
+CollabMail Pro integrates with downstream systems for access provisioning, recertification, and revocation:
+- Access Provisioning: Automatic provisioning of access to mail groups, applications, and resources based on predefined roles and workflows.
+- Recertification: Periodic recertification of user access rights, with notifications and actions triggered by recertification workflows.
+- Revocation: Access revocation based on user requests, workflow-driven actions, or recertification outcomes.
+
+## Real-Time and Batch Processing
+CollabMail Pro leverages both real-time and batch processing for access management:
+- Real-Time Processing: Instantly trigger access actions and notifications for critical events such as new access requests or revocation.
+- Batch Processing: Perform bulk access provisioning, recertification, or revocation actions on a scheduled basis to optimize system performance.
+
 ## Mail Notification Engine
 The Mail Notification Engine enhances CollabMail Pro by providing automatic email notifications for various events:
 
@@ -40,6 +51,7 @@ Notifications are sent to relevant users, ensuring that team members are informe
 - Frontend: React
 - Database: PostgreSQL
 - Authentication: JWT
+- Access Management Integration - RSA IGL
 
 ## Installation
 
@@ -74,6 +86,7 @@ Detailed API documentation is available [here](/path/to/api-documentation.md).
 3. Send and receive emails within the mail group.
 4. Initiate and participate in workflow and approval processes.
 5. Customize notification preferences and access control settings.
+6. Stay informed with real-time mail notifications for access management tasks.
 
 ## Contributing
 
