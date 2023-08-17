@@ -80,6 +80,14 @@ A simplified database design for the "CollabMail" project, focusing on the core 
 - Comment
 - Status (Pending/Approved/Rejected)
 
+### Notification:
+
+- NotificationID (Primary Key)
+- UserID (Foreign Key referencing User.UserID)
+- EmailID (Foreign Key referencing Email.EmailID)
+- Type (NewEmail/NewWorkflow/TaskAssigned/ApprovalRequired/etc.)
+- Timestamp
+
 ## Relationships:
 
 - Each User can create multiple MailGroups.
@@ -93,3 +101,4 @@ A simplified database design for the "CollabMail" project, focusing on the core 
 - Each WorkflowInstance belongs to one WorkflowTemplate and is initiated by one User.
 - Each WorkflowStage is associated with one Role.
 - Each WorkflowAction is associated with one WorkflowInstance, one User, and one WorkflowStage.
+- Each Notification is associated with one User and may reference an Email.
